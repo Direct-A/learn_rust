@@ -8,4 +8,5 @@ fn main() {
 
     println!("a new vector {:?}", goods);
     println!("the last member of vector {}", goods[goods.len()-1]);
+    goods.get(index)
 }
