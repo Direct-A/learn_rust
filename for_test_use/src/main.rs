@@ -1,12 +1,13 @@
 fn main() {
-    // let goods = vec![0; 5];
-    let mut goods = Vec::new();
-    goods.push(5);
-    goods.push(6);
-    goods.push(7);
-    goods.push(8);
-
-    println!("a new vector {:?}", goods);
-    println!("the last member of vector {}", goods[goods.len()-1]);
-    goods.get(index)
+    let mut v = vec![1,2,3,4,5];
+    let first = v[0];
+    let mut second = "xxx".to_string();
+    second.push_str("ooo");
+    let mut third = String::from("xxxxxxx");
+    third.push_str(&second);
+    v.push(6);
+    println!("first: {}", first);
+    println!("v[0]: {}", v[0]);
+    println!("second: {}", second);
+    println!("third: {}", third);
 }
