@@ -1,15 +1,9 @@
 fn main() {
-    let s = "नमस्ते";
+    let v = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-    let mut j = 1;
-    for i in s.bytes() {
-        println!("{}:\t{}", j, i);
-        j += 1;
+    for i in v {
+        println!("{}", i);
     }
-
-    let mut j = 1;
-    for i in s.chars() {
-        println!("{}:\t{}", j, i);
-        j += 1;
-    }
+    println!("{:?}", v);
+    println!("{}", v.len());
 }
