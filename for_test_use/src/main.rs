@@ -1,4 +1,3 @@
-// #![feature(drain_filter)]
 fn main() {
     // let s = String::from("hello world");
     // let f = || {
@@ -43,6 +42,30 @@ fn main() {
     //     sum
     // }
     // assert_eq!(binary_slice_to_number(&a), 19);
-    println!("{}", 5f64 / 2f64);
-    println!("{}", 5 % 2);
+    // println!("float: {}", 5f64 / 2f64);
+    // println!("int: {}", 5 / 2);
+    // println!("int: {}", 5 % 2);
+    // println!("length: {}", "fvck off ".len());
+    // println!("length: {}", 12153.to_string().len());
+    for (i, j) in 211354_u64.to_string().chars().enumerate() {
+        println!("{}{} +", j, "0".repeat(211354_u64.to_string().len() - i));
+    }
+}
+
+fn expanded_form(n: u64) -> String {
+    let mut s = String::new();
+    for (i, j) in n.to_string().chars().enumerate() {
+        if j != '0' {
+            s += &j.to_string();
+            s += &"0".repeat(n.to_string().len() - i - 1);
+            s += " + ";
+        }
+    }
+    s.trim_end_matches(&" + ").to_string()
+}
+
+#[test]
+fn test() {
+    assert_eq!(expanded_form(2890077), "2000000 + 800000 + 90000 + 70 + 7");
+    assert_eq!(expanded_form(270000), "200000 + 70000");
 }
